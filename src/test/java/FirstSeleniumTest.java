@@ -94,5 +94,4 @@ public class FirstSeleniumTest {
         driver.close();
         driver.quit();
     }
-
 }
