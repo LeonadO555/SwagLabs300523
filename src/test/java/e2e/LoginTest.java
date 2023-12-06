@@ -13,7 +13,6 @@ public class LoginTest extends TestBase {
 
         loginPage = new LoginPage(app.driver);
         loginPage.login(email, password);
-        loginPage.waitForLoading();
 
     }
 

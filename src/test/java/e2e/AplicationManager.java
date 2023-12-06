@@ -12,7 +12,7 @@ public class AplicationManager {
     protected void init(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("http://https://www.saucedemo.com/");
+        driver.get("https://www.saucedemo.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
