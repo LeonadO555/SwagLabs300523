@@ -1,5 +1,5 @@
 # Homework
-#### For completed this homework need take ApplicationManager , TestBase, BasePage, Wait classes and dependencies(build.gradle) from Phonebook project! 
+#### For completed this homework need take ApplicationManager , TestBase, BasePage, e2e.pages.e2e.Wait classes and dependencies(build.gradle) from Phonebook project! 
 # Important!!!!
 * clone this project
 * create new branch (it will your BASE branch) from master: example YOUR!-> Firstname_Lastname
