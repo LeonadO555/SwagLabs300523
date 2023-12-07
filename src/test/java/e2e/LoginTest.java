@@ -7,7 +7,7 @@ public class LoginTest extends TestBase {
     LoginPage loginPage;
 
     @Test
-    public void userCanLogin(){
+    public void standartUserCanLogin(){
         String email = "standard_user";
         String password = "secret_sauce";
 
@@ -16,7 +16,7 @@ public class LoginTest extends TestBase {
 
     }
     @Test
-    public void userCanLogin1(){
+    public void problemUserCanLogin(){
         String email = "problem_user";
         String password = "secret_sauce";
 
@@ -25,7 +25,7 @@ public class LoginTest extends TestBase {
 
     }
     @Test
-    public void userCanLogin2(){
+    public void performanceGlitchUserCanLogin(){
         String email = "performance_glitch_user";
         String password = "secret_sauce";
 
@@ -34,7 +34,7 @@ public class LoginTest extends TestBase {
 
     }
     @Test
-    public void userCanLogin3(){
+    public void errorUserCanLogin(){
         String email = "error_user";
         String password = "secret_sauce";
 
@@ -43,7 +43,7 @@ public class LoginTest extends TestBase {
 
     }
     @Test
-    public void userCanLogin4(){
+    public void visualUserCanLogin(){
         String email = "visual_user";
         String password = "secret_sauce";
 
