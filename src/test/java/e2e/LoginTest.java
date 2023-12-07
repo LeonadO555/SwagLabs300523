@@ -43,7 +43,7 @@ public class LoginTest extends TestBase {
 
     }
     @Test
-    public void visualUserCanLogin4(){
+    public void visualUserCanLogin(){
         String email = "visual_user";
         String password = "secret_sauce";
 
