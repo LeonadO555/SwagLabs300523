@@ -1,0 +1,16 @@
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+public class TestBase {
+    protected  static ApplicationManager app = new ApplicationManager();
+
+    @BeforeMethod //выполняется до метода, кот запускаем
+    public void setupTest(){
+        app.init();
+    }
+
+    @AfterMethod
+    public void tearDown(){
+        app.stop();
+    }
+}
