@@ -12,30 +12,24 @@ public class AuthorizationTest extends TestBase{
     public void userCanLogin(String email,String password){
 
         loginPage = new LoginPage(app.driver);
+        loginPage.waitForLoading();
         loginPage.login(email,password);
 
         productsPage = new ProductsPage(app.driver);
+        productsPage.waitForLoading();
         productsPage.waitForLoading();
 
     }
     @Test(dataProvider = "invalidUserNameData",dataProviderClass = DataProviders.class)
     public void userCanNotLoginWithInvalidUserName(String email,String password){
-
         loginPage = new LoginPage(app.driver);
+        loginPage.waitForLoading();
         loginPage.login(email,password);
-
-        productsPage = new ProductsPage(app.driver);
-        productsPage.waitForLoading();
-
     }
     @Test(dataProvider = "invalidPasswordData",dataProviderClass = DataProviders.class)
     public void userCanNotLoginWithInvalidPassword(String email,String password){
-
         loginPage = new LoginPage(app.driver);
+        loginPage.waitForLoading();
         loginPage.login(email,password);
-
-        productsPage = new ProductsPage(app.driver);
-        productsPage.waitForLoading();
-
     }
 }
