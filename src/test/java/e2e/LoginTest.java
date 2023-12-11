@@ -2,6 +2,7 @@ package e2e;
 
 import e2e.pages.LoginPage;
 import org.testng.annotations.Test;
+import utils.DataProviders;
 
 public class LoginTest extends TestBase {
     LoginPage loginPage;
@@ -15,42 +16,10 @@ public class LoginTest extends TestBase {
         loginPage.login(email, password);
 
     }
-    @Test
-    public void problemUserCanLogin(){
-        String email = "problem_user";
-        String password = "secret_sauce";
-
+    @Test(dataProvider = "dataForLogin",dataProviderClass = DataProviders.class)
+    public void userCanLogin(String userName, String password){
         loginPage = new LoginPage(app.driver);
-        loginPage.login(email, password);
-
+        loginPage.login(userName,password );
+        loginPage.waitForLoading();
     }
-    @Test
-    public void performanceGlitchUserCanLogin(){
-        String email = "performance_glitch_user";
-        String password = "secret_sauce";
-
-        loginPage = new LoginPage(app.driver);
-        loginPage.login(email, password);
-
-    }
-    @Test
-    public void errorUserCanLogin(){
-        String email = "error_user";
-        String password = "secret_sauce";
-
-        loginPage = new LoginPage(app.driver);
-        loginPage.login(email, password);
-
-    }
-    @Test
-    public void visualUserCanLogin(){
-        String email = "visual_user";
-        String password = "secret_sauce";
-
-        loginPage = new LoginPage(app.driver);
-        loginPage.login(email, password);
-
-    }
-
-
 }
