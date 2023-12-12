@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static sun.jvm.hotspot.interpreter.InterpreterCodelet.descriptionField;
+
 
 public class InventoryPage extends BasePage {
     public WebDriver driver;
@@ -50,10 +50,12 @@ public class InventoryPage extends BasePage {
         getWait().forClickable(addToCartTShirtRedButton);
         getWait().forClickable(addToCartSauceLabsOneSizeButton);
     }
+
     public void setBurgerMenuButton() {
         burgerMenuButton.click();
     }
-public void setLogoutLinkButton(){
+
+    public void setLogoutLinkButton() {
         logoutLinkButton.click();
-}
+    }
 }
