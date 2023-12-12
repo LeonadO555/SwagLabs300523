@@ -8,7 +8,7 @@ public class LoginTest extends TestBase {
     LoginPage loginPage;
 
     @Test
-    public void standartUserCanLogin(){
+    public void standardUserCanLogin(){
         String email = "standard_user";
         String password = "secret_sauce";
 
