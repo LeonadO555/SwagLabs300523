@@ -40,10 +40,10 @@ public class InventoryPage extends BasePage {
 
 
     public void waitForLoading() {
-        getWait().forVisibility(burgerMenuButton);
-        getWait().forVisibility(menuWrapButton);
-        getWait().forVisibility(logoutLinkButton);
-        getWait().forVisibility(addToCartSauceLabsBackpackButton);
+        getWait().forInvisibility(burgerMenuButton);
+        getWait().forInvisibility(menuWrapButton);
+        getWait().forInvisibility(logoutLinkButton);
+        getWait().forClickable(addToCartSauceLabsBackpackButton);
         getWait().forClickable(addToCartSauceLabsBikeLightButton);
         getWait().forClickable(addToCartSauceLabBoltTShirtsButton);
         getWait().forClickable(addToCartSauceLabsFleeceJacketButton);
