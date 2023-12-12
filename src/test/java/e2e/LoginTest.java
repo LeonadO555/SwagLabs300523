@@ -37,7 +37,8 @@ public class LoginTest extends TestBase {
     public void userCanLoginWithValidData(String userName,String password) {
 
         loginPage = new LoginPage(app.driver);
-        loginPage.login(userName, password);
         loginPage.waitForLoading();
+        loginPage.login(userName, password);
+
     }
 }
