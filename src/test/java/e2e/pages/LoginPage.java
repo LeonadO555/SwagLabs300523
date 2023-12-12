@@ -9,11 +9,11 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(xpath = "//input[@id='user-name']")
+    @FindBy(xpath = "//*[@name='user-name']")
     WebElement userNameInput;
-    @FindBy(xpath = "//input[@id='password']")
+    @FindBy(xpath = "//*[@name='password']")
     WebElement passwordInput;
-    @FindBy(xpath = "//input[@id='login-button']")
+    @FindBy(xpath = "//*[@name='login-button']")
     public WebElement loginButton;
 
     public void waitForLoading() {
@@ -22,8 +22,10 @@ public class LoginPage extends BasePage {
         getWait().forVisibility(loginButton);
     }
 
-    public void login(String userName, String password) {
-        userNameInput.sendKeys(userName);
+
+    // Describe methods
+    public void login(String email, String password) {
+        userNameInput.sendKeys(email);
         passwordInput.sendKeys(password);
         loginButton.click();
     }

@@ -26,24 +26,21 @@ public class FirstSeleniumTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        WebElement emailInput = driver.findElement(By.xpath("//input[@id='user-name']"));
+        WebElement emailInput = driver.findElement(By.xpath("//*[@name='user-name']"));
         emailInput.sendKeys("standard_user");
 
-        WebElement passwordInput = driver.findElement(By.xpath("//input[@id='password']"));
+        WebElement passwordInput = driver.findElement(By.xpath("//*[@name='password']"));
         passwordInput.sendKeys("secret_sauce");
 
-        WebElement loginButton = driver.findElement(By.xpath("//input[@id='login-button']"));
+        WebElement loginButton = driver.findElement(By.xpath("//*[@name='login-button']"));
         loginButton.click();
+
         WebElement burgerMenuButton = driver.findElement(By.xpath("//*[@id='react-burger-menu-btn']"));
         burgerMenuButton.click();
+
         WebElement logOutButton = driver.findElement(By.xpath("//*[@id='logout_sidebar_link']"));
         logOutButton.click();
-       /*
-        WebElement burgerMenuButton4 = driver.findElement(By.xpath("//*[@id='react-burger-menu-btn']"));
-        burgerMenuButton.click();
-        WebElement logOutButton4 = driver.findElement(By.xpath("//*[@id='logout_sidebar_link']"));
-        logOutButton.click();
-        */
+
         driver.close();
         driver.quit();
     }
