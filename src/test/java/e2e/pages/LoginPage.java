@@ -23,9 +23,9 @@ public class LoginPage extends BasePage {
     }
 
 
-    // Describe methods
-    public void login(String email, String password) {
-        userNameInput.sendKeys(email);
+
+    public void login(String userName, String password) {
+        userNameInput.sendKeys(userName);
         passwordInput.sendKeys(password);
         loginButton.click();
     }

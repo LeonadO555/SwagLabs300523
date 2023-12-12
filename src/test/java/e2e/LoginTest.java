@@ -3,7 +3,6 @@ package e2e;
 
 import e2e.pages.LoginPage;
 import e2e.utils.DataProviders;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
@@ -13,11 +12,11 @@ public class LoginTest extends TestBase {
 
     @Test
     public void userCanLogin() {
-        String email = "standard_user";
+        String userName = "standard_user";
         String password = "secret_sauce";
 
         loginPage = new LoginPage(app.driver);
-        loginPage.login(email, password);
+        loginPage.login(userName, password);
 
     }
 
@@ -34,12 +33,11 @@ public class LoginTest extends TestBase {
         loginPage.waitForLoading();
     }
 
-    @Test(dataProvider = "invalidLoginData", dataProviderClass = DataProviders.class)
-    public void userCannotWithInvalidPassword(String email,String password) {
-
+    @Test(dataProvider = "validLoginData", dataProviderClass = DataProviders.class)
+    public void userCanLoginWithValidData(String userName,String password) {
 
         loginPage = new LoginPage(app.driver);
-        loginPage.login(email, password);
+        loginPage.login(userName, password);
         loginPage.waitForLoading();
     }
 }
