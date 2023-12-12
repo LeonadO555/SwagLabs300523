@@ -10,4 +10,9 @@ public class InventoryPage extends BasePage {
     public InventoryPage(WebDriver driver) {
         super(driver);
     }
+
+    @FindBy(xpath = "//*[@id='item_0_title_link']")
+    WebElement titleLink;
+
+
 }
