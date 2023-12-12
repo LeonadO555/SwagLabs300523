@@ -8,7 +8,7 @@ public class LoginTest extends TestBase {
     LoginPage loginPage;
 
     @Test
-    public void standartUserCanLogin(){
+    public void standardUserCanLogin(){
         String email = "standard_user";
         String password = "secret_sauce";
 
@@ -19,7 +19,7 @@ public class LoginTest extends TestBase {
     @Test(dataProvider = "dataForLogin",dataProviderClass = DataProviders.class)
     public void userCanLogin(String userName, String password){
         loginPage = new LoginPage(app.driver);
-        loginPage.login(userName,password );
         loginPage.waitForLoading();
+        loginPage.login(userName,password );
     }
 }
