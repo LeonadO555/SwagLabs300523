@@ -13,7 +13,7 @@ public class DataProviders {
     Faker faker = new Faker();
 
     @DataProvider
-    public Iterator<Object[]> userCanLogin(){
+    public Iterator<Object[]>  loginValidData(){
 
         List<Object[]> list = new ArrayList<>();
 
@@ -22,6 +22,18 @@ public class DataProviders {
         list.add(new Object[]{"performance_glitch_user", "secret_sauce"});
         list.add(new Object[]{"error_user", "secret_sauce"});
         list.add(new Object[]{"visual_user", "secret_sauce"});
+
+        return list.iterator();
+    }
+
+    @DataProvider
+    public Iterator<Object[]>  loginNotValidData(){
+
+        List<Object[]> list = new ArrayList<>();
+
+        list.add(new Object[]{"standard_user", "secretsauce"});
+        list.add(new Object[]{"problemuser", "secret_sauce"});
+
 
         return list.iterator();
     }

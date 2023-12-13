@@ -7,10 +7,9 @@ import org.testng.annotations.Test;
 public class LoginTest extends TestBase {
     LoginPage loginPage;
 
-    @Test(dataProvider = "userCanLogin",dataProviderClass = DataProviders.class)
+    @Test(dataProvider = "loginValidData",dataProviderClass = DataProviders.class)
     public void userCanLogin(String email, String password){
-       // String email = "standard_user";
-       // String password = "secret_sauce";
+
 
         loginPage = new LoginPage(app.driver);
         loginPage.login(email, password);
@@ -24,6 +23,7 @@ public class LoginTest extends TestBase {
         loginPage = new LoginPage(app.driver);
         loginPage.login(email, password);
 
+
     }
     @Test
     public void performanceGlitchUserCanLogin(){
@@ -32,6 +32,7 @@ public class LoginTest extends TestBase {
 
         loginPage = new LoginPage(app.driver);
         loginPage.login(email, password);
+
 
     }
     @Test
@@ -42,6 +43,7 @@ public class LoginTest extends TestBase {
         loginPage = new LoginPage(app.driver);
         loginPage.login(email, password);
 
+
     }
     @Test
     public void visualUserCanLogin(){
@@ -51,7 +53,23 @@ public class LoginTest extends TestBase {
         loginPage = new LoginPage(app.driver);
         loginPage.login(email, password);
 
+
+    }
+    @Test(dataProvider = "loginNotValidData",dataProviderClass = DataProviders.class)
+    public void userCannotLoginWithInvalidPassword(String email,String password){
+
+        loginPage = new LoginPage(app.driver);
+        loginPage.login(email, password);
+       
     }
 
+    @Test
+    public void userCannotLoginWithInvalidLogin(){
+        String email = "rrr";
+        String password = "secret_sauce";
 
+        loginPage = new LoginPage(app.driver);
+        loginPage.login(email, password);
+        loginPage.waitForLoading();
+    }
 }
