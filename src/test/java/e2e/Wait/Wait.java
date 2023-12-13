@@ -1,3 +1,4 @@
+package e2e.Wait;
 
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -13,16 +14,12 @@ public class Wait {
     public WebDriverWait wait;
 
     Duration TIMEOUT = Duration.ofSeconds(10);
-
-
     public Wait(WebDriver driver){
         this.driver = driver;
-
     }
 
     public  WebDriverWait setWait(){
         return wait = new WebDriverWait(driver, TIMEOUT);
-
     }
 
     public void forVisibility(WebElement element){ // проверяет видимость элементов

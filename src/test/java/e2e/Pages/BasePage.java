@@ -1,3 +1,6 @@
+package e2e.Pages;
+
+import e2e.Wait.Wait;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,7 +43,7 @@ public class BasePage {
         input.clear();
         input.sendKeys(value);
 
+
+
     }
-
-
 }
