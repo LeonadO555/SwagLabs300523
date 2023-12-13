@@ -5,11 +5,10 @@ import e2e.util.DataProviders;
 import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
-    LoginPage loginPage;
+     LoginPage loginPage;
 
     @Test(dataProvider = "loginValidData",dataProviderClass = DataProviders.class)
     public void userCanLogin(String email, String password){
-
 
         loginPage = new LoginPage(app.driver);
         loginPage.login(email, password);
