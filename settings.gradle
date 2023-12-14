@@ -1,2 +1,6 @@
 rootProject.name = 'SwagLabs300523'
+include 'src:main:untitled'
+findProject(':src:main:untitled')?.name = 'untitled'
+include 'src:untitled'
+findProject(':src:untitled')?.name = 'untitled'
 
