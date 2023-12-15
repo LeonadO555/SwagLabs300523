@@ -5,7 +5,7 @@ import e2e.util.DataProviders;
 import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
-     LoginPage loginPage;
+    LoginPage loginPage;
 
     @Test(dataProvider = "loginValidData",dataProviderClass = DataProviders.class)
     public void userCanLogin(String email, String password){
@@ -23,6 +23,7 @@ public class LoginTest extends TestBase {
         loginPage.login(email, password);
 
 
+
     }
     @Test
     public void performanceGlitchUserCanLogin(){
@@ -31,6 +32,7 @@ public class LoginTest extends TestBase {
 
         loginPage = new LoginPage(app.driver);
         loginPage.login(email, password);
+
 
 
     }
@@ -43,6 +45,7 @@ public class LoginTest extends TestBase {
         loginPage.login(email, password);
 
 
+
     }
     @Test
     public void visualUserCanLogin(){
@@ -53,13 +56,19 @@ public class LoginTest extends TestBase {
         loginPage.login(email, password);
 
 
+
     }
     @Test(dataProvider = "loginNotValidData",dataProviderClass = DataProviders.class)
-    public void userCannotLoginWithInvalidPassword(String email,String password){
+    public void userCannotLoginWithInvalidPassword(String email,String password, String caseName){
 
         loginPage = new LoginPage(app.driver);
+        loginPage.waitForLoading();
         loginPage.login(email, password);
-       
+        loginPage.waitForLoading();
+
+        loginPage.takeLoginPageScreenshot( caseName + "negativeLoginCase");
+
+
     }
 
     @Test

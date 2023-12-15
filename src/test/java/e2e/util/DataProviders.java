@@ -31,8 +31,9 @@ public class DataProviders {
 
         List<Object[]> list = new ArrayList<>();
 
-        list.add(new Object[]{"standard_user", "secretsauce"});
-        list.add(new Object[]{"problemuser", "secret_sauce"});
+        list.add(new Object[]{"standard_user", "secretsauce","invalid_password"});
+        list.add(new Object[]{"problemuser", "secret_sauce","invalid_email"});
+        list.add(new Object[]{"12345","12345","with_invalid_data"});
 
 
         return list.iterator();
