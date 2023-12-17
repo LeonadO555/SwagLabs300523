@@ -38,6 +38,15 @@ public class DataProviders {
 
         return list.iterator();
     }
+
+    @DataProvider
+    public Iterator<Object[]>  loginData(){
+
+        List<Object[]> list = new ArrayList<>();
+
+        list.add(new Object[]{"standard_user", "secret_sauce"});
+        return list.iterator();
+    }
 }
 
 
