@@ -8,7 +8,7 @@ public class LoginTest extends TestBase {
 
     @Test
     public void userCanLogin() {
-        String email = "standard_user , problem_user, performance_glitch_user, error_user, error_user, visual_user";
+        String email = "standard_user , problem_user, performance_glitch_user, error_user,  visual_user";
         String password = "secret_sauce";
 
         loginPage = new LoginPage(app.driver);

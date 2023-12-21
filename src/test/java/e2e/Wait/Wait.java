@@ -51,6 +51,4 @@ public class Wait {
             throw new TimeoutException(element.getAccessibleName() + " Is not clickable more than " + TIMEOUT.toString());
         }
     }
-
-
 }

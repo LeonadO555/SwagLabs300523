@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 
+import java.util.function.Function;
+
 public class BasePage {
     public WebDriver driver;
 
@@ -17,9 +19,7 @@ public class BasePage {
 
     }
 
-    //public Wait getWait(){
-     //   return new Wait(driver);
-    //}
+
 
     public Select getSelect(WebElement element){
        return new Select(element);
