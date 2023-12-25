@@ -33,7 +33,7 @@ public class AddItemTest extends TestBase {
         Assert.assertEquals(actualFilter, filter);
         productsPage.addItem();
         List<WebElement> selectedItems = productsPage.getAddedItems();
-        productsPage.openYourCardPageDialog();
+        productsPage.openYourCardPage();
 
         yourCardPage = new YourCardPage(app.driver);
         yourCardPage.waitForLoading();

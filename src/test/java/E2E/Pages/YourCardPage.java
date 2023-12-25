@@ -29,7 +29,7 @@ public class YourCardPage extends BasePage{
     public void waitForLoadingYourCardPage(){
         Assert.assertTrue(isElementDisplayed(yourCardHadar));
     }
-    public void ContinueShoppingButton(){
+    public void continueShoppingButton(){
         backToContinueShopping.click();
     }
 }

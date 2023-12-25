@@ -77,7 +77,7 @@ public class ProductsPage extends BasePage{
     public String getFilterByName() {
         return getSelect(filterByName).getFirstSelectedOption().getText();
     }
-    public YourCardPage openYourCardPageDialog(){
+    public YourCardPage openYourCardPage(){
         cardButton.click();
         return new YourCardPage(driver);
     }
