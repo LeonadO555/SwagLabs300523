@@ -16,7 +16,7 @@ public class AddItemTest extends TestBase {
     YourCardPage yourCardPage;
 
     @Test
-    public void userCanAddItems() throws InterruptedException {
+    public void userCanAddItems(){
         String userName = "standard_user";
         String password = "secret_sauce";
         String filter = "Price (low to high)";
