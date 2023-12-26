@@ -3,6 +3,7 @@ package E2E;
 import E2E.Pages.LoginPage;
 import E2E.Pages.ProductsPage;
 import E2E.Pages.YourCardPage;
+import E2E.enums.ProductsInfoTabs;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -31,18 +32,19 @@ public class AddItemTest extends TestBase {
         productsPage.selectByFilterName(filter);
         String actualFilter = productsPage.getFilterByName();
         Assert.assertEquals(actualFilter, filter);
-        productsPage.addItem();
-        List<WebElement> selectedItems = productsPage.getAddedItems();
+        productsPage.addItem(ProductsInfoTabs.TEST_ALLTHETHINGS_T_SHIRT_RED);
+        productsPage.addItem(ProductsInfoTabs.SAUCE_LABS_BACKPACK);
+        productsPage.addItem(ProductsInfoTabs.SAUCE_LABS_BOLT_T_SHIRT);
+        List<WebElement> addedItems = productsPage.getAddedItems();
         productsPage.openYourCardPage();
-
         yourCardPage = new YourCardPage(app.driver);
-        yourCardPage.waitForLoading();
-        List<WebElement> itemsInCard = yourCardPage.getItemsInCard();
-        Assert.assertEquals(selectedItems.size(), itemsInCard.size());
-        yourCardPage.ContinueShoppingButton();
-
-        productsPage.waitForLoadingRemoveButton();
-        productsPage.removeItem();
+        yourCardPage.waitForLoadingYourCardPage();
+        List<WebElement>itemsInCard = yourCardPage.getItemsInCard();
+        Assert.assertEquals(addedItems.size(),itemsInCard.size());
+        yourCardPage.continueShoppingButton();
+        productsPage.removeItem(ProductsInfoTabs.SAUCE_LABS_BOLT_T_SHIRT);
+        productsPage.removeItem(ProductsInfoTabs.SAUCE_LABS_BACKPACK);
+        productsPage.removeItem(ProductsInfoTabs.TEST_ALLTHETHINGS_T_SHIRT_RED);
 
 
     }

@@ -1,5 +1,6 @@
 package E2E.Pages;
 
+import E2E.enums.ProductsInfoTabs;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -77,36 +78,16 @@ public class ProductsPage extends BasePage{
     public String getFilterByName() {
         return getSelect(filterByName).getFirstSelectedOption().getText();
     }
-    public YourCardPage openYourCardPage(){
+    public  YourCardPage openYourCardPage(){
         cardButton.click();
         return new YourCardPage(driver);
     }
-    public void addItem() throws InterruptedException {
-        addSauceLabsBackpack.click();
-        Thread.sleep(1000);
-        addSauceLabsBikeLight.click();
-        Thread.sleep(1000);
-        addSauceLabsBoltT_Shirt.click();
-        Thread.sleep(1000);
-        addSauceLabsFleeceJacket.click();
-        Thread.sleep(1000);
-        addSauceLabsOnesie.click();
-        Thread.sleep(1000);
-        addTest_allTheThings_T_Shirt_Red.click();
-        Thread.sleep(1000);
+    public void addItem(ProductsInfoTabs productsInfoTabs){
+        WebElement addToCardButton = driver.findElement(By.xpath(productsInfoTabs.getAddToCartXPath()));
+        addToCardButton.click();
     }
-    public void removeItem() throws InterruptedException {
-        removeSauceLabsOnesie.click();
-        Thread.sleep(1000);
-        removeTest_allTheThings_T_Shirt_Red.click();
-        Thread.sleep(1000);
-        removeSauceLabsBackpack.click();
-        Thread.sleep(1000);
-        removeSauceLabsBikeLight.click();
-        Thread.sleep(1000);
-        removeSauceLabsBoltT_Shirt.click();
-        Thread.sleep(1000);
-        removeSauceLabsFleeceJacket.click();
-        Thread.sleep(1000);
+    public void removeItem(ProductsInfoTabs productsInfoTabs){
+        WebElement removeFromCardButton = driver.findElement(By.xpath(productsInfoTabs.getRemoveFromCartXPath()));
+        removeFromCardButton.click();
     }
 }
