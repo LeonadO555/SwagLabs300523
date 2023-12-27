@@ -43,7 +43,13 @@ public class ProductsPage extends BasePage{
     WebElement addTest_allTheThings_T_Shirt_Red;
     @FindBy(xpath = "//*[@id='remove-test.allthethings()-t-shirt-(red)']")
     WebElement removeTest_allTheThings_T_Shirt_Red;
+
     public void waitForLoading() {
+        getWait().forVisibility(header);
+        getWait().forVisibility(filterByName);
+        getWait().forClickable(cardButton);
+    }
+    public void waitForLoadingWithItems() {
         getWait().forVisibility(header);
         getWait().forVisibility(filterByName);
         getWait().forVisibility(addSauceLabsBackpack);
