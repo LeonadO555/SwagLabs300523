@@ -15,6 +15,11 @@ public class LoginPage extends BasePage {
     WebElement passwordInput;
     @FindBy(xpath = "//*[@id='login-button']")
     WebElement loginButton;
+    public void waitForLoading(){
+        getWait().forVisibility(userNameInput);
+        getWait().forVisibility(passwordInput);
+        getWait().forVisibility(loginButton);
+    }
 
     public void login (String userName,String password){
         userNameInput.sendKeys(userName);
