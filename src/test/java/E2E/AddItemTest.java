@@ -38,7 +38,7 @@ public class AddItemTest extends TestBase {
         List<WebElement> addedItems = productsPage.getAddedItems();
         productsPage.openYourCardPage();
         yourCardPage = new YourCardPage(app.driver);
-        yourCardPage.waitForLoadingYourCardPage();
+        yourCardPage.waitForLoading();
         List<WebElement>itemsInCard = yourCardPage.getItemsInCard();
         Assert.assertEquals(addedItems.size(),itemsInCard.size());
         yourCardPage.continueShoppingButton();

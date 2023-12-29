@@ -30,7 +30,7 @@ public class UserCanRemoveItemsFromTheCartAllUserNamesTest extends TestBase{
 
         productsPage.openYourCardPage();
         yourCardPage = new YourCardPage(app.driver);
-        yourCardPage.waitForLoadingYourCardPage();
+        yourCardPage.waitForLoading();
         yourCardPage.removeItemInYourCard(ProductsInfoTabs.SAUCE_LABS_ONESIE);
         yourCardPage.removeItemInYourCard(ProductsInfoTabs.SAUCE_LABS_BOLT_T_SHIRT);
         yourCardPage.removeItemInYourCard(ProductsInfoTabs.SAUCE_LABS_BIKE_LIGHT);
