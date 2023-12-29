@@ -31,7 +31,7 @@ public class YourInformation extends BasePage{
         lastNameInput.sendKeys(lastName);
         postCodeInput.sendKeys(String.valueOf(postCode));
     }
-    public void clickOnCheckoutButton(){
+    public void clickOnContinueButton(){
         continueButton.click();
     }
 
