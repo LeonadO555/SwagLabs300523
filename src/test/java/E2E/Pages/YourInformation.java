@@ -31,6 +31,9 @@ public class YourInformation extends BasePage{
         lastNameInput.sendKeys(lastName);
         postCodeInput.sendKeys(String.valueOf(postCode));
     }
+    public void takeYourInformationPageScreenshot(String actualScreenshotName){
+        takeAndCompareScreenshot(actualScreenshotName,null);
+    }
     public void clickOnContinueButton(){
         continueButton.click();
     }

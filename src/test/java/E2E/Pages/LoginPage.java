@@ -20,6 +20,9 @@ public class LoginPage extends BasePage {
         getWait().forVisibility(passwordInput);
         getWait().forVisibility(loginButton);
     }
+    public void takeLoginPageScreenshot(String actualScreenshotName){
+        takeAndCompareScreenshot(actualScreenshotName,null);
+    }
 
     public void login (String userName,String password){
         userNameInput.sendKeys(userName);
