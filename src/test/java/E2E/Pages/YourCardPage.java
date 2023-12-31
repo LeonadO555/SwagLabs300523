@@ -36,6 +36,8 @@ public class YourCardPage extends BasePage {
 
     @FindBy(xpath = "//*[@id='remove-test.allthethings()-t-shirt-(red)']")
     WebElement removeTest_allTheThings_T_Shirt_Red;
+    @FindBy(xpath = "//*[@id='checkout']")
+    WebElement checkoutButton;
 
     public void waitForLoading() {
         getWait().forVisibility(yourCardHadar);
@@ -43,13 +45,10 @@ public class YourCardPage extends BasePage {
     }
 
     public List<WebElement> getItemsInCard() {
-        return driver.findElements(By.xpath("//*[@class='cart_item']"));
+        return driver.findElements(By.xpath("//*[@id='cart_contents_container']//*[@class='cart_item']"));
     }
 
 
-    public void waitForLoadingYourCardPage() {
-        Assert.assertTrue(isElementDisplayed(yourCardHadar));
-    }
 
     public void continueShoppingButton() {
         backToContinueShopping.click();
@@ -57,5 +56,8 @@ public class YourCardPage extends BasePage {
     public void removeItemInYourCard(ProductsInfoTabs productsInfoTabs){
         WebElement removeFromCardButton = driver.findElement(By.xpath(productsInfoTabs.getRemoveFromCartXPath()));
         removeFromCardButton.click();
+    }
+    public void checkout (){
+        checkoutButton.click();
     }
 }

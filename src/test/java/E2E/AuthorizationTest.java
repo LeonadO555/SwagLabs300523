@@ -14,10 +14,9 @@ public class AuthorizationTest extends TestBase{
         loginPage = new LoginPage(app.driver);
         loginPage.waitForLoading();
         loginPage.login(email,password);
-
         productsPage = new ProductsPage(app.driver);
         productsPage.waitForLoading();
-        productsPage.waitForLoading();
+
 
     }
     @Test(dataProvider = "invalidUserNameData",dataProviderClass = DataProviders.class)
@@ -32,4 +31,6 @@ public class AuthorizationTest extends TestBase{
         loginPage.waitForLoading();
         loginPage.login(email,password);
     }
+
+
 }

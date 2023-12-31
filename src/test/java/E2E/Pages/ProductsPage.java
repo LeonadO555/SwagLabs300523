@@ -72,9 +72,6 @@ public class ProductsPage extends BasePage{
         return driver.findElements(By.xpath("//button[text()='Remove']"));
     }
 
-    public int getProductCount(){
-        return driver.findElements(By.xpath("//*[@id='inventory_container']//*[@class='inventory_item']")).size();
-    }
     public void filterDropdownButton(){
         filterByName.click();
     }
