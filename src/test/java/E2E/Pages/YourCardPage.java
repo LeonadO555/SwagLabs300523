@@ -19,23 +19,8 @@ public class YourCardPage extends BasePage {
     @FindBy(xpath = "//*[@id='continue-shopping']")
     WebElement backToContinueShopping;
 
-    @FindBy(xpath = "//*[@id='remove-sauce-labs-backpack']")
-    WebElement removeSauceLabsBackpack;
-
-    @FindBy(xpath = "//*[@id='remove-sauce-labs-bike-light']")
-    WebElement removeSauceLabsBikeLight;
-
-    @FindBy(xpath = "//*[@id='remove-sauce-labs-bolt-t-shirt']")
-    WebElement removeSauceLabsBoltT_Shirt;
-
-    @FindBy(xpath = "//*[@id='remove-sauce-labs-fleece-jacket']")
-    WebElement removeSauceLabsFleeceJacket;
-
-    @FindBy(xpath = "//*[@id='remove-sauce-labs-onesie']")
-    WebElement removeSauceLabsOnesie;
-
-    @FindBy(xpath = "//*[@id='remove-test.allthethings()-t-shirt-(red)']")
-    WebElement removeTest_allTheThings_T_Shirt_Red;
+    @FindBy(xpath = "//*[@id='contents_wrapper']")
+    WebElement productsOnYourCardPage;
     @FindBy(xpath = "//*[@id='checkout']")
     WebElement checkoutButton;
 
@@ -46,6 +31,10 @@ public class YourCardPage extends BasePage {
 
     public List<WebElement> getItemsInCard() {
         return driver.findElements(By.xpath("//*[@id='cart_contents_container']//*[@class='cart_item']"));
+    }
+
+    public void takeScreenshotOnYourCardPage(){
+        takeAndCompareScreenshot("YourCard_Page_Select_3_Items",productsOnYourCardPage);
     }
 
 

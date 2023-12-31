@@ -32,5 +32,35 @@ public class AuthorizationTest extends TestBase{
         loginPage.login(email,password);
     }
 
+    private void loginTestMethod(String email ,String password, String screenshotName,boolean typeOfCase) {
+        loginPage = new LoginPage(app.driver);
+        loginPage.waitForLoading();
+        loginPage.login(email, password);
+        if (typeOfCase) {
+            loginPage.waitForLoading();
+            loginPage.takeLoginPageScreenshot(screenshotName);
+        } else {
+            productsPage = new ProductsPage(app.driver);
+            productsPage.waitForLoading();
+            productsPage.takeScreenshotHeaderOnProductsPage();
+        }
+    }
+    @Test
+    public void userCanLoginWithValidData(){
+        loginTestMethod("standard_user","secret_sauce",null,false);
+    }
+    @Test
+    public void userCanLoginWithInValidEmail(){
+        loginTestMethod("standard_userrr","secret_sauce",null,true);
+    }
+    @Test
+    public void userCanLoginWithInValidPassword(){
+        loginTestMethod("standard_userrr","secret_33sauce",null,true);
+    }
+    @Test
+    public void userCanLoginWithInValidEmailAndPassword(){
+        loginTestMethod("standard_userrr","sdsdecret_sauce",null,true);
+    }
+
 
 }

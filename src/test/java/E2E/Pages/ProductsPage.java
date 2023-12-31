@@ -15,6 +15,8 @@ public class ProductsPage extends BasePage{
     }
     @FindBy(xpath ="//*[@class='app_logo']")
     WebElement header;
+    @FindBy(xpath = "//*[@id='inventory_container']")
+    WebElement allProducts;
     @FindBy(xpath = "//*[@data-test='product_sort_container']")
     WebElement filterByName;
     @FindBy(xpath = "//*[@class='shopping_cart_link']")
@@ -88,6 +90,12 @@ public class ProductsPage extends BasePage{
     public void addItem(ProductsInfoTabs productsInfoTabs){
         WebElement addToCardButton = driver.findElement(By.xpath(productsInfoTabs.getAddToCartXPath()));
         addToCardButton.click();
+    }
+    public void takeScreenshotHeaderOnProductsPage(){
+        takeAndCompareScreenshot("header",header);
+    }
+    public void takeScreenshotOnProductsPageAllProducts(){
+        takeAndCompareScreenshot("product_Page_Selected_3_Items",allProducts);
     }
     public void removeItem(ProductsInfoTabs productsInfoTabs){
         WebElement removeFromCardButton = driver.findElement(By.xpath(productsInfoTabs.getRemoveFromCartXPath()));

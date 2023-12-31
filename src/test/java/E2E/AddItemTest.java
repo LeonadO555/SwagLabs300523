@@ -28,6 +28,7 @@ public class AddItemTest extends TestBase {
 
         productsPage = new ProductsPage(app.driver);
         productsPage.waitForLoading();
+        productsPage.takeScreenshotHeaderOnProductsPage();
         productsPage.filterDropdownButton();
         productsPage.selectByFilterName(filter);
         String actualFilter = productsPage.getFilterByName();
@@ -35,12 +36,14 @@ public class AddItemTest extends TestBase {
         productsPage.addItem(ProductsInfoTabs.TEST_ALLTHETHINGS_T_SHIRT_RED);
         productsPage.addItem(ProductsInfoTabs.SAUCE_LABS_BACKPACK);
         productsPage.addItem(ProductsInfoTabs.SAUCE_LABS_BOLT_T_SHIRT);
+        productsPage.takeScreenshotOnProductsPageAllProducts();
         List<WebElement> addedItems = productsPage.getAddedItems();
         productsPage.openYourCardPage();
         yourCardPage = new YourCardPage(app.driver);
         yourCardPage.waitForLoading();
         List<WebElement>itemsInCard = yourCardPage.getItemsInCard();
         Assert.assertEquals(addedItems.size(),itemsInCard.size());
+        yourCardPage.takeScreenshotOnYourCardPage();
         yourCardPage.continueShoppingButton();
         productsPage.removeItem(ProductsInfoTabs.SAUCE_LABS_BOLT_T_SHIRT);
         productsPage.removeItem(ProductsInfoTabs.SAUCE_LABS_BACKPACK);
