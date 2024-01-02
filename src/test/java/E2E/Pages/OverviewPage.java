@@ -23,6 +23,9 @@ public class OverviewPage extends YourInformation{
         getWait().forVisibility(header);
         getWait().forClickable(finishButton);
     }
+    public void takeOverviewPage(String actualScreenshotName){
+        takeAndCompareScreenshot(actualScreenshotName,null);
+    }
     public List<WebElement> getProductCountOnOverviewPage() {
         return driver.findElements(By.xpath("//*[@class='cart_list']//*[@class='cart_item']"));
     }

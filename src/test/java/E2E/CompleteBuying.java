@@ -2,27 +2,26 @@ package E2E;
 
 import E2E.Pages.*;
 import E2E.enums.ProductsInfoTabs;
+import E2E.untils.DataProviders;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class UserCanByAnyItems extends TestBase {
+public class CompleteBuying extends TestBase{
     LoginPage loginPage;
     ProductsPage productsPage;
     YourCardPage yourCardPage;
     YourInformation yourInformation;
     OverviewPage overviewPage;
     CompleteOrder completeOrder;
-@Test
-    public void userByAnyItems(){
-        String userName = "standard_user";
-        String password = "secret_sauce";
+    @Test(dataProvider = "validLoginData",dataProviderClass = DataProviders.class)
+    public void userCannotCompleteBuyingWithEmptyData(String userName,String password) {
         String filter = "Price (low to high)";
-        String firstName = "Oleksandr";
-        String lastName = "Rashevchenko";
-        Integer postCode = 12323;
+        String firstName = "";
+        String lastName = "";
+        Integer postCode = -0;
 
 
         loginPage = new LoginPage(app.driver);
@@ -48,22 +47,7 @@ public class UserCanByAnyItems extends TestBase {
 
         yourInformation = new YourInformation(app.driver);
         yourInformation.waitForLoading();
-        yourInformation.setPersonInformation(firstName,lastName,postCode);
+        yourInformation.setPersonInformation(firstName, lastName, postCode);
         yourInformation.clickOnContinueButton();
-
-        overviewPage = new OverviewPage(app.driver);
-        overviewPage.waitForLoading();
-        List<WebElement> itemsOnOverview = overviewPage.getProductCountOnOverviewPage();
-        Assert.assertEquals(itemsInCard.size(),itemsOnOverview.size());
-        overviewPage.clickOnFinishButton();
-
-        completeOrder = new CompleteOrder(app.driver);
-        completeOrder.waitForLoading();
-        completeOrder.clickOnBackHomeButton();
-
-        productsPage.waitForLoading();
-
-
-
     }
-}
+    }

@@ -27,15 +27,20 @@ public class UserCanRemoveItemsFromTheCartAllUserNamesTest extends TestBase{
         productsPage.addItem(ProductsInfoTabs.SAUCE_LABS_BOLT_T_SHIRT);
         productsPage.addItem(ProductsInfoTabs.SAUCE_LABS_ONESIE);
         productsPage.addItem(ProductsInfoTabs.SAUCE_LABS_BIKE_LIGHT);
+        productsPage.addItem(ProductsInfoTabs.SAUCE_LABS_FLEECE_JACKET);
+        productsPage.takeScreenshotOnProductsPageSelectedProducts4();
 
         productsPage.openYourCardPage();
         yourCardPage = new YourCardPage(app.driver);
         yourCardPage.waitForLoading();
+        yourCardPage.takeScreenshotOnYourCardPage4();
         yourCardPage.removeItemInYourCard(ProductsInfoTabs.SAUCE_LABS_ONESIE);
         yourCardPage.removeItemInYourCard(ProductsInfoTabs.SAUCE_LABS_BOLT_T_SHIRT);
         yourCardPage.removeItemInYourCard(ProductsInfoTabs.SAUCE_LABS_BIKE_LIGHT);
+        yourCardPage.removeItemInYourCard(ProductsInfoTabs.SAUCE_LABS_FLEECE_JACKET);
         yourCardPage.continueShoppingButton();
         productsPage.waitForLoading();
+        productsPage.takeScreenshotOnProductsPageNotSelectedProducts();
         List<WebElement> finalItems = productsPage.getAddedItems();
         Assert.assertEquals(finalItems.size(), 0, "Expected zero items after removal, but found: " + finalItems.size());
 

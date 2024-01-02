@@ -33,8 +33,11 @@ public class YourCardPage extends BasePage {
         return driver.findElements(By.xpath("//*[@id='cart_contents_container']//*[@class='cart_item']"));
     }
 
-    public void takeScreenshotOnYourCardPage(){
+    public void takeScreenshotOnYourCardPage3(){
         takeAndCompareScreenshot("YourCard_Page_Select_3_Items",productsOnYourCardPage);
+    }
+    public void takeScreenshotOnYourCardPage4(){
+        takeAndCompareScreenshot("YourCard_Page_Select_4_Items",productsOnYourCardPage);
     }
 
 

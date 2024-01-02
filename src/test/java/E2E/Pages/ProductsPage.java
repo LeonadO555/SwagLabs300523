@@ -94,8 +94,14 @@ public class ProductsPage extends BasePage{
     public void takeScreenshotHeaderOnProductsPage(){
         takeAndCompareScreenshot("header",header);
     }
-    public void takeScreenshotOnProductsPageAllProducts(){
+    public void takeScreenshotOnProductsPageSelectedProducts3(){
         takeAndCompareScreenshot("product_Page_Selected_3_Items",allProducts);
+    }
+    public void takeScreenshotOnProductsPageSelectedProducts4(){
+        takeAndCompareScreenshot("product_Page_Selected_4_Items",null);
+    }
+    public void takeScreenshotOnProductsPageNotSelectedProducts(){
+        takeAndCompareScreenshot("product_Page_Not_Selected_Items",null);
     }
     public void removeItem(ProductsInfoTabs productsInfoTabs){
         WebElement removeFromCardButton = driver.findElement(By.xpath(productsInfoTabs.getRemoveFromCartXPath()));

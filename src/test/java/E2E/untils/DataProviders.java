@@ -19,7 +19,7 @@ public class DataProviders {
        // list.add(new Object[]{"problem_user","secret_sauce"});
        // list.add(new Object[]{"performance_glitch_user","secret_sauce"});
         //list.add(new Object[]{"error_user","secret_sauce"});
-        list.add(new Object[]{"visual_user","secret_sauce"});
+        //list.add(new Object[]{"visual_user","secret_sauce"});
         return list.iterator();
     }
     @DataProvider

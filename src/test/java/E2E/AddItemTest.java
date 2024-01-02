@@ -36,14 +36,14 @@ public class AddItemTest extends TestBase {
         productsPage.addItem(ProductsInfoTabs.TEST_ALLTHETHINGS_T_SHIRT_RED);
         productsPage.addItem(ProductsInfoTabs.SAUCE_LABS_BACKPACK);
         productsPage.addItem(ProductsInfoTabs.SAUCE_LABS_BOLT_T_SHIRT);
-        productsPage.takeScreenshotOnProductsPageAllProducts();
+        productsPage.takeScreenshotOnProductsPageSelectedProducts3();
         List<WebElement> addedItems = productsPage.getAddedItems();
         productsPage.openYourCardPage();
         yourCardPage = new YourCardPage(app.driver);
         yourCardPage.waitForLoading();
         List<WebElement>itemsInCard = yourCardPage.getItemsInCard();
         Assert.assertEquals(addedItems.size(),itemsInCard.size());
-        yourCardPage.takeScreenshotOnYourCardPage();
+        yourCardPage.takeScreenshotOnYourCardPage3();
         yourCardPage.continueShoppingButton();
         productsPage.removeItem(ProductsInfoTabs.SAUCE_LABS_BOLT_T_SHIRT);
         productsPage.removeItem(ProductsInfoTabs.SAUCE_LABS_BACKPACK);
