@@ -1,5 +1,6 @@
 package e2e.pages;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,6 +25,10 @@ public class LoginPage extends BasePage{
         getWait().forVisibility(userNameInput);
         getWait().forVisibility(passwordInput);
         getWait().forVisibility(loginButton);
+    }
+
+    public void takeLoginPageScreenshot(String actualScreenshotName){
+        takeAndCompareScreenshot(actualScreenshotName, null);
     }
 
     //Describe methods

@@ -6,7 +6,7 @@
             <class name="e2e.LoginTest">
                 <methods>
                     <include name="loginValidData"/>
-                    <include name="userCannotLoginWithInvalidPassword"/>
+                    <include name="problemUserCanLogin"/>
                 </methods>
             </class>
 
