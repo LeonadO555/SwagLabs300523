@@ -20,17 +20,30 @@ public class ProductsInfoPage extends ProductsPage {
     @FindBy(xpath = "//*[@id='remove-sauce-labs-backpack']")
     WebElement removeButton;
 
+    @FindBy(xpath = "//div[@id='shopping_cart_container']")
+    WebElement containerButton;
+
     public void waitForLoading(){
         getWait().forClickable(backToProductsButton);
-        getWait().forClickable(addToCartButton);
+        getWait().forVisibility(addToCartButton);
         getWait().forClickable(removeButton);
     }
+
+    @Override
+    public void waitForOpen() {
+        getWait().forClickable(addToCartButton);
+        getWait().forClickable(containerButton);
+    }
+
     public void clickBackToProductsButton(){
         backToProductsButton.click();
     }
 
     public void clickAddToCartButton(){
         addToCartButton.click();
+    }
+    public void clickContainerButton(){
+        containerButton.click();
     }
     public void clickRemoveButton(){
         removeButton.click();

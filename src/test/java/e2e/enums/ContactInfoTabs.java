@@ -5,7 +5,8 @@ import lombok.Getter;
 @Getter
 public enum ContactInfoTabs {
     INFO("2"),
-    CARD("3");
+    CARD("3"),
+    YOUR("4");
     public final String value;
 
     ContactInfoTabs(String value){

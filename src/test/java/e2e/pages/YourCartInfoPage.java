@@ -24,7 +24,11 @@ public class YourCartInfoPage extends ProductsInfoPage{
     public void waitForOpen(){
         getWait().forVisibility(removeButton);
         getWait().forVisibility(continueShoppingButton);
-        getWait().forVisibility(checkoutButton);
+        getWait().forClickable(checkoutButton);
+    }
+
+    public void clickCheckoutButton(){
+        checkoutButton.click();
     }
 
 }
