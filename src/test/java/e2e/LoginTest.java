@@ -8,6 +8,7 @@ public class LoginTest extends TestBase{
     LoginPage loginPage;
 
 
+
     @Test(dataProvider = "userCanLogin", dataProviderClass = DataProviders.class)
         public void userCanLoginWithAllUsernames(String email, String password){
         loginPage = new LoginPage(app.driver);
