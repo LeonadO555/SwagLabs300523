@@ -19,7 +19,6 @@ public class CheckoutYourInformationPage extends ProductsPage {
     WebElement cancelButton;
     @FindBy(xpath = "//*[@id='continue']")
     WebElement continueButton;
-
     public void waitForLoading(){
         getWait().forVisibility(firstName);
         getWait().forVisibility(lastName);
@@ -36,11 +35,11 @@ public class CheckoutYourInformationPage extends ProductsPage {
     public String getPostCode(){
         return postCode.getText();
     }
-
     public void clickCancelButton(){
         cancelButton.click();
     }
     public void clickContinueButton(){
         continueButton.click();
     }
+
 }

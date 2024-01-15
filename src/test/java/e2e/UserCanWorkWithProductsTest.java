@@ -13,34 +13,29 @@ public class UserCanWorkWithProductsTest extends TestBase {
     ProductsInfoPage productsInfoPage;
     YourCartInfoPage yourCartInfoPage;
     CheckoutYourInformationPage checkoutYourInformationPage;
+
+    AddCheckoutYourInformationPage addCheckoutYourInformationPage;
     CheckoutOverviewPage checkoutOverviewPage;
     CheckoutCompletePage checkoutCompletePage;
     DataProviders dataProviders;
 
     Faker faker = new Faker();
 
-    private void checkYourData(CheckoutYourInformationPage page,String firstName, String lastName, String postCode){
-        String actualFirstName = page.getFirstName();
-        String actualLastName = page.getLastName();
-        String actualPostCode = page.getPostCode();
-        Assert.assertEquals(actualFirstName, firstName, actualFirstName + "is not equal " + firstName);
-        Assert.assertEquals(actualLastName, lastName, actualLastName + "is not equal " + lastName);
-        Assert.assertEquals(actualPostCode, postCode, actualPostCode + "is not equal " + postCode);
-
-    }
 
     @Test(dataProvider = "loginData",dataProviderClass = DataProviders.class)
     public void userCanWorkWithContactTest(String email, String password) {
-
-        // login as user " войти как пользователь "
-        loginPage=new LoginPage(app.driver);
-        loginPage.getWait();
-        loginPage.login(email,password);
 
         String firstName = "Georgiy";
         String lastName = "Manolov";
         String postCode = "13581";
 
+
+
+
+        // login as user " войти как пользователь "
+        loginPage=new LoginPage(app.driver);
+        loginPage.getWait();
+        loginPage.login(email,password);
 
         productsPage = new ProductsPage(app.driver);
         productsPage.waitForOpen();
@@ -57,25 +52,17 @@ public class UserCanWorkWithProductsTest extends TestBase {
         yourCartInfoPage.waitForOpen();
         yourCartInfoPage.clickCheckoutButton();
 
+        addCheckoutYourInformationPage =new AddCheckoutYourInformationPage(app.driver);
+        addCheckoutYourInformationPage.setFirstName(firstName);
+        addCheckoutYourInformationPage.setLastNameInput(lastName);
+        addCheckoutYourInformationPage.setPostCodeInput(postCode);
+        addCheckoutYourInformationPage.clickContinueButton();
 
-        checkoutYourInformationPage = new CheckoutYourInformationPage(app.driver);
-        checkoutYourInformationPage.waitForLoading();
-        checkoutYourInformationPage.getLastName();
-        checkoutYourInformationPage.getFirstName();
-        checkoutYourInformationPage.getPostCode();
-        checkYourData(checkoutYourInformationPage, firstName, lastName, postCode);
-
-
-
-
-
-        yourCartInfoPage = new YourCartInfoPage(app.driver);
-        checkoutYourInformationPage = new CheckoutYourInformationPage(app.driver);
         checkoutOverviewPage = new CheckoutOverviewPage(app.driver);
+        checkoutOverviewPage.clickFinishButton();
+
         checkoutCompletePage = new CheckoutCompletePage(app.driver);
-
-
-        checkYourData(checkoutYourInformationPage, firstName, lastName, postCode);
+        checkoutCompletePage.clickBackButton();
 
     }
 }
