@@ -12,7 +12,6 @@ public class UserCanWorkWithProductsTest extends TestBase {
     ProductsPage productsPage;
     ProductsInfoPage productsInfoPage;
     YourCartInfoPage yourCartInfoPage;
-    CheckoutYourInformationPage checkoutYourInformationPage;
 
     AddCheckoutYourInformationPage addCheckoutYourInformationPage;
     CheckoutOverviewPage checkoutOverviewPage;
